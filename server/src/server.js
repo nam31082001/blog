@@ -2,17 +2,18 @@ const express = require('express')
 const app = express()
 const port = 5000;
 const cors = require('cors');
-const  bodyParser = require("body-parser")
+const bodyParser = require("body-parser")
+const route=require('./Routes/router')
+const db=require('./Models/db')
 
 app.use(cors());
+db.connect()
 app.use(bodyParser.urlencoded(
-  {extended:false}
+  { extended: false }
 ))
 app.use(express.json())
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+route(app)
 
-app.listen(port,()=>{
-    console.log(`Example app listening at http://localhost:${port}`)
-  })
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
