@@ -1,0 +1,15 @@
+.add_blog {
+    width: 50px;
+    height: 50px;
+    background: rgb(101, 101, 244);
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    cursor: pointer;
+}
