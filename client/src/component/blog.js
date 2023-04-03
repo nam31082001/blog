@@ -6,7 +6,7 @@ const Blog = () => {
             <div className="blog" >
                 <div className='blog_icon'>
                     <i>N</i>
-                    <div>
+                    <div onClick={()=>alert()}>
                         <i>.</i>
                         <i>.</i>
                         <i>.</i>
