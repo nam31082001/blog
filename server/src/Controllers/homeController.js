@@ -17,6 +17,20 @@ class homeController {
         .then(() => res.send('Xóa thành công'))
         .catch(err => res.status(500).json({ error: err }))
     }
+    put(req,res){
+        const data=req.body
+        const {id}=req.params
+        Blog.findByIdAndUpdate(id,data,{new:true})
+        .then(item=>{
+            if(!item){
+                return res.status(404).send('item not found')
+            }
+            res.send(item)
+        })
+        .catch(error=>{
+            res.status(500).send(error.message)
+        })
+    }
 }
 
 module.exports = new homeController();

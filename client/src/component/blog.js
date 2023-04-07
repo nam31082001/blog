@@ -3,19 +3,15 @@ import { AiFillLike } from 'react-icons/ai'
 import moment from 'moment'
 import '../style/blog.scss'
 import { useDispatch, useSelector } from 'react-redux'
+import Comment from './comment'
 const Blog = () => {
     const [check, setCheck] = useState()
-    const [checkLength,setCheckLength]=useState('blog_one')
-    const [idLike,setIdLike]=useState()
-
-
+    const [checkLength, setCheckLength] = useState('blog_one')
 
     const data = useSelector(state => state.data)
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch({ type: "GET" })
-    }, [dispatch])
-
+    
+    useEffect(() => { dispatch({ type: "GET" }) }, [dispatch])
     useEffect(() => {
         data.length === 1 ? setCheckLength('blog_one') : setCheckLength('blog')
     }, [data])
@@ -25,6 +21,10 @@ const Blog = () => {
     const handleClickDelete = index => {
         dispatch({ type: "DELETE_DB", payload: index })
         dispatch({ type: "DELETE_CLIENT", payload: index })
+    }
+    const handleClickLike = (index) => {
+        dispatch({ type: 'COUNT_LIKE_API', payload: index })
+        
     }
     return (
         <div className='blog_all'>
@@ -71,12 +71,10 @@ const Blog = () => {
                             </div>
                             <hr />
                             <div className='blog_like'>
-                                <div onClick={()=>setIdLike(item._id)} >
-                                    <AiFillLike/>({item.countLike})
+                                <div onClick={() => handleClickLike(item)} >
+                                    <AiFillLike />({item.countLike})
                                 </div>
-                                <div>
-                                    Bình Luận(0)
-                                </div>
+                               <Comment item={item}/>
                                 <div>
                                     Chia sẻ(0)
                                 </div>

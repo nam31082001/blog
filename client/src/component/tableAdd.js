@@ -8,7 +8,7 @@ const TableAdd = ({ clickClose }) => {
     const [checkOut, setCheckOut] = useState(false)
     const [data, setData] = useState({ title: "", body: "" });
     const dispatch = useDispatch();
- 
+
 
 
     const handleChangeFile = (e) => {

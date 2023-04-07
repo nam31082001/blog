@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Blog=new Schema({
+const Blog = new Schema({
     title: { type: String },
     body: { type: String },
-    img: { type: Array},
+    img: { type: Array },
     countLike: { type: Number },
     createdAt: { type: Date, default: Date.now },
     updateAt: { type: Date, default: Date.now }
@@ -12,4 +12,4 @@ const Blog=new Schema({
 },
     { timestamps: true }
 )
-module.exports =mongoose.model('blogs',Blog)
+module.exports = mongoose.model('blogs', Blog)
