@@ -1,9 +1,10 @@
-import { ADD_IN_DATA, GET_IN_DATA, DELETE_CLIENT, COUNT_LIKE, CHECK_DETAIL } from "./action";
+import { ADD_IN_DATA, GET_IN_DATA, DELETE_CLIENT, COUNT_LIKE, CHECK_DETAIL, CLOSE_DETAIL, GET_IN_COMMENT, POST_COMMENT } from "./action";
 
 const initialState = {
     data: [],
-    detail:{},
-    checkDetail:false
+    detail: {},
+    checkDetail: false,
+    comment: []
 
 };
 
@@ -27,8 +28,15 @@ const rootReducer = (state = initialState, action) => {
                 }
             })
             return { ...state, data: dataCopyLike }
-            case CHECK_DETAIL:
-                return{...state,detail:action.payload,checkDetail:true}
+        case CHECK_DETAIL:
+            return { ...state, detail: action.payload, checkDetail: true }
+        case CLOSE_DETAIL:
+            return { ...state, checkDetail: false }
+        // comment
+        case GET_IN_COMMENT:
+            return { ...state, comment: action.payload }
+        case POST_COMMENT:
+            return { ...state, comment: [...state.comment, action.payload] }
         default:
             return state;
     }

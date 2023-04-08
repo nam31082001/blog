@@ -9,22 +9,47 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+        .section::-webkit-scrollbar {
+            width: 10px;
+          }
         >div {
+            width: 100%;
+            height: 100%;
             width: min(50%, 500px);
             background: white;
             height: 650px;
             overflow: scroll;
             overflow-x: hidden;
+            position: relative;
+
+         
 
             .detail_name {
-                width: 50px;
-                height: 50px;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                background: wheat;
-                border-radius: 50%;
+
+                >div:nth-child(1) {
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgb(58, 126, 182);
+                    border-radius: 50%;
+                }
+
+                >div:nth-child(2) {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: wheat;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
             }
 
             .detail_createAt {
@@ -48,48 +73,155 @@
                 }
             }
 
+            >hr {
+                margin: 0;
+            }
+
+            .like_share {
+                display: flex;
+
+                >p {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
+                    cursor: pointer;
+                }
+
+                >p:hover {
+                    background: whitesmoke;
+                }
+            }
+
             .detail_input {
                 background: rgb(241, 236, 227);
-                width: 100%;
+                width: 31.5%;
                 height: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                position: fixed;
+                bottom: 12px;
+
 
                 >div {
                     display: flex;
-                    >div{
+
+                    >div {
                         background: white;
                         border-radius: 0 10px 10px 0;
                         display: flex;
                         justify-self: center;
                         align-items: center;
+                        height: 30px;
+                        margin-top: 1%;
 
                     }
+
                     >input {
+                        margin-top: 1%;
+                        margin-left: 1%;
+                        width: 60%;
+                        height: 30px;
                         border-radius: 10px 0 0 10px;
                         border: none;
                         padding-left: 5px;
                     }
+
                     >input:focus {
                         outline: none
                     }
                 }
             }
-            .detail_comment{
-                margin-top: 5px;
-                width: 100%;
-                height: 70px;
-                background: red;
-                display: flex;
-                .detail_comment_name{
-                    width: 10%;
-                    background: rgb(182, 164, 164);
-                }
-                .detail_comment_title{
-                    width: 90%;
-                    background: rgb(10, 8, 8);
-                    
+
+            .detail_comment {
+                >span {
+                    margin-top: 5px;
+                    width: 100%;
+                    height: 70px;
+                    display: flex;
+
+                    .detail_comment_name {
+                        width: 10%;
+
+                        >div {
+                            margin: 2px 0 0 2px;
+                            width: 30px;
+                            height: 30px;
+                            background: rgb(58, 126, 182);
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+                    }
+
+                    .detail_comment_title {
+                        width: 90%;
+
+                        >div:nth-child(2) {
+                            display: flex;
+                            margin-top: 5px;
+
+                            >div:nth-child(1) {
+                                width: 10%;
+
+                                >div {
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    background: red;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+
+                            >div:nth-child(2) {
+                                >div {
+                                    display: inline-block;
+                                    background: whitesmoke;
+                                    border-radius: 10px;
+
+                                    >span {
+                                        cursor: pointer;
+                                    }
+
+                                }
+
+                                width: 90%;
+
+                            }
+                        }
+
+                        >div:nth-child(1) {
+                            display: inline-block;
+                            border-radius: 10px;
+                            background: whitesmoke;
+
+                            p {
+                                margin: 0;
+
+                                >span {
+                                    cursor: pointer;
+                                    float: right;
+
+                                }
+                            }
+
+                            >span {
+                                font-size: 12px;
+                                float: right;
+
+                                >span {
+                                    margin: 0 10px 0 0;
+                                    cursor: pointer;
+                                }
+                            }
+
+                        }
+
+
+                    }
                 }
             }
         }
@@ -97,4 +229,3 @@
     }
 
 }
-

@@ -13,3 +13,10 @@ export const COUNT_LIKE = 'COUNT_LIKE'
 export const COUNT_LIKE_API='COUNT_LIKE_API'
 
 export const CHECK_DETAIL='CHECK_DETAIL'
+export const CLOSE_DETAIL='CLOSE_DETAIL'
+
+export const ADD_COMMENT='ADD_COMMENT'
+
+export const GET_COMMENT='GET_COMMENT'
+export const GET_IN_COMMENT='GET_IN_COMMENT'
+export const POST_COMMENT='POST_COMMENT'

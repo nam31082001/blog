@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const detail=useSelector(state=>state.detail)
   const checkDetail=useSelector(state=>state.checkDetail)
-  console.log(detail)
+  
   return (
     <div className="app">
        <Header/>

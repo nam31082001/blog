@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { GrClose } from 'react-icons/gr';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import CheckClose from "./checkClose";
 const TableAdd = ({ clickClose }) => {
     const check = clickClose
